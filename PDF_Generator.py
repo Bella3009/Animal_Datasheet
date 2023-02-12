@@ -12,7 +12,13 @@ for filepath in filepaths:
     pdf.add_page()
     filename = Path(filepath).stem
     animal = filename.title()
-    pdf.set_font(family="Times", size=12, style="B")
-    pdf.cell(w=0, h=2, txt=animal)
+    with open(filepath, "r") as file:
+        content = file.read()
+    
+    pdf.set_font(family="Times", size=16, style="B")
+    pdf.cell(w=0, h=20, txt=animal, ln=1)
+    pdf.line(10, 25, 200, 25)
+    pdf.set_font(family="Times", size=10)
+    pdf.multi_cell(w=0, h=2, txt=content)
     
 pdf.output(f"Animals.pdf")
