@@ -19,6 +19,6 @@ for filepath in filepaths:
     pdf.cell(w=0, h=20, txt=animal, ln=1)
     pdf.line(10, 25, 200, 25)
     pdf.set_font(family="Times", size=10)
-    pdf.multi_cell(w=0, h=2, txt=content)
+    pdf.multi_cell(w=0, h=5, txt=content)
     
 pdf.output(f"Animals.pdf")
